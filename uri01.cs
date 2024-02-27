@@ -116,29 +116,29 @@
 
 
             int n = 0;
-int m = 0;
-
-Console.WriteLine("Informe M e N");
-
-m = int.Parse(Console.ReadLine());
-n = int.Parse(Console.ReadLine());
-
-int[,] matrix = new int[m, n];
-
-for (int i = 0; i < m; i++)
-{
-  for (int j = 0; j < n; j++)
-  {
-    matrix[i, j] = int.Parse(Console.ReadLine());
-  }
-}
-
-for (int i = 0; i < m; i++)
-{
-  if (i == m - 1) Console.WriteLine();
-  for (int j = 0; j < n; j++)
-  {
-    Console.Write($"{matrix[i, j]} ");
-  }
-}
+            int m = 0;
+            
+            Console.WriteLine("Informe M e N");
+            
+            m = int.Parse(Console.ReadLine());
+            n = int.Parse(Console.ReadLine());
+            
+            int[,] matrix = new int[m, n];
+            
+            for (int i = 0; i < m; i++)
+            {
+              for (int j = 0; j < n; j++)
+              {
+                matrix[i, j] = int.Parse(Console.ReadLine());
+              }
+            }
+            
+            for (int i = 0; i < m; i++)
+            {
+              if (i == m - 1) Console.WriteLine();
+              for (int j = 0; j < n; j++)
+              {
+                Console.Write($"{matrix[i, j]} ");
+              }
+            }
             Console.ReadLine();
