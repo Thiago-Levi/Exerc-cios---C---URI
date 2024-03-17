@@ -176,23 +176,77 @@
               Console.WriteLine("You do not have sufficient privileges.");
             }
 
-string customerName = "Ms. Barros";
+            string customerName = "Ms. Barros";
+            
+            string currentProduct = "Magic Yield";
+            int currentShares = 2975000;
+            decimal currentReturn = 0.1275m;
+            decimal currentProfit = 55000000.0m;
+            
+            string newProduct = "Glorious Future";
+            decimal newReturn = 0.13125m;
+            decimal newProfit = 63000000.0m;
+            
+            // Your logic here
+            
+            Console.WriteLine("Here's a quick comparison:\n");
+            
+            string comparisonMessage = "";
+            
+            // Your logic here
+            
+            Console.WriteLine(comparisonMessage);
 
-string currentProduct = "Magic Yield";
-int currentShares = 2975000;
-decimal currentReturn = 0.1275m;
-decimal currentProfit = 55000000.0m;
 
-string newProduct = "Glorious Future";
-decimal newReturn = 0.13125m;
-decimal newProfit = 63000000.0m;
+                 System.Console.Write("How many employees will be registered? ");
+      int qtdEmployees = Convert.ToInt32(Console.ReadLine());
+      List<Employee> listOfEmployees = new List<Employee>();
+      Employee employeeToIncrease;
 
-// Your logic here
 
-Console.WriteLine("Here's a quick comparison:\n");
 
-string comparisonMessage = "";
+      for (int i = 0; i < qtdEmployees; i++)
+      {
 
-// Your logic here
+        System.Console.WriteLine($"Employees #{i + 1}:");
 
-Console.WriteLine(comparisonMessage);
+        System.Console.Write($"Id: ");
+        int id = Convert.ToInt32(Console.ReadLine());
+
+        System.Console.Write($"Name: ");
+        string name = Console.ReadLine();
+
+        System.Console.Write($"Salary: ");
+        double salary = Convert.ToDouble(Console.ReadLine(), CultureInfo.InstalledUICulture);
+
+        listOfEmployees.Add(new Employee(id, name, salary));
+
+      }
+
+      System.Console.WriteLine("-----------------------------------");
+      System.Console.Write("Enter the employee id that will have salary increase: ");
+      int idToIncreaseSalary = Convert.ToInt32(Console.ReadLine());
+
+      employeeToIncrease = listOfEmployees.Find(employee => employee.Id == idToIncreaseSalary);
+
+      if (employeeToIncrease == null)
+      {
+        System.Console.WriteLine("This id does not exist!");
+      }
+      else
+      {
+        System.Console.Write("Enter the percentage: ");
+        double percentageOfIncrease = Convert.ToDouble(Console.ReadLine(), CultureInfo.InvariantCulture);
+        employeeToIncrease.IncreaseSalary(percentageOfIncrease);
+
+      }
+
+
+
+
+
+      foreach (var employee in listOfEmployees)
+      {
+        employee.Status();
+      }
+
